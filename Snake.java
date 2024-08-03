@@ -79,4 +79,6 @@ public class Snake {
       window.drawSomeShit(positions.get(i), new Vector(25, 25), Color.GREEN, g);
     }
   }
+
+  public int getSize() { return positions.size() - 1; }
 }

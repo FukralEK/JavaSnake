@@ -1,4 +1,6 @@
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,5 +23,8 @@ public class Renderer extends JPanel {
     SnakeGame.getWindow().clearScreen(g);
     SnakeGame.getSnake().draw(g);
     SnakeGame.getFruit().draw(g);
+    g.setColor(Color.WHITE);
+    g.setFont(new Font("Arial", Font.BOLD, 32));
+    g.drawString("Points: " + SnakeGame.getSnake().getSize(), 1280 / 2, 50);
   }
 }
