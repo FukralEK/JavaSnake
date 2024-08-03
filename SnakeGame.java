@@ -23,11 +23,6 @@ public class SnakeGame {
       }
       LAST = System.currentTimeMillis();
       snake.update();
-
-      SnakeGame.isUp = false;
-      SnakeGame.isDown = false;
-      SnakeGame.isRight = false;
-      SnakeGame.isLeft = false;
     }
   }
 
