@@ -21,15 +21,19 @@ public class SnakeGame {
       if (NOW - LAST < 100) {
         continue;
       }
-      window.clearScreen();
       LAST = System.currentTimeMillis();
       snake.update();
-      snake.draw();
-      fruit.draw();
+
+      SnakeGame.isUp = false;
+      SnakeGame.isDown = false;
+      SnakeGame.isRight = false;
+      SnakeGame.isLeft = false;
     }
   }
 
   public static Window getWindow() { return window; }
+
+  public static Snake getSnake() { return snake; }
 
   public static Fruit getFruit() { return fruit; }
 

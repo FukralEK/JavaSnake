@@ -22,21 +22,5 @@ public class GameKeyListener implements KeyListener {
   }
 
   @Override
-  public void keyReleased(KeyEvent e) {
-    if (e.getKeyCode() == 87) {
-      SnakeGame.isUp = false;
-    }
-    if (e.getKeyCode() == 83) {
-      SnakeGame.isDown = false;
-    }
-    if (e.getKeyCode() == 68) {
-      SnakeGame.isRight = false;
-    }
-    if (e.getKeyCode() == 65) {
-      SnakeGame.isLeft = false;
-    }
-    if (e.getKeyCode() == 113) {
-      SnakeGame.restart();
-    }
-  }
+  public void keyReleased(KeyEvent e) {}
 }

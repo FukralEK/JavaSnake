@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class Snake {
@@ -37,6 +38,19 @@ public class Snake {
       }
     }
 
+    if (positions.get(0).x > 52) {
+      positions.set(0, new Vector(-1, positions.get(0).y));
+    }
+    if (positions.get(0).x < -2) {
+      positions.set(0, new Vector(51, positions.get(0).y));
+    }
+    if (positions.get(0).y > 30) {
+      positions.set(0, new Vector(positions.get(0).x, -1));
+    }
+    if (positions.get(0).y < -2) {
+      positions.set(0, new Vector(positions.get(0).x, 29));
+    }
+
     for (int i = positions.size() - 1; i > 0; i--) {
       positions.set(i,
                     new Vector(positions.get(i - 1).x, positions.get(i - 1).y));
@@ -54,14 +68,15 @@ public class Snake {
     for (int i = 1; i < positions.size(); i++) {
       if (positions.get(0).x == positions.get(i).x &&
           positions.get(0).y == positions.get(i).y) {
+
         SnakeGame.restart();
       }
     }
   }
 
-  public void draw() {
+  public void draw(Graphics g) {
     for (int i = 0; i < positions.size(); i++) {
-      window.drawSomeShit(positions.get(i), new Vector(25, 25), Color.GREEN);
+      window.drawSomeShit(positions.get(i), new Vector(25, 25), Color.GREEN, g);
     }
   }
 }
